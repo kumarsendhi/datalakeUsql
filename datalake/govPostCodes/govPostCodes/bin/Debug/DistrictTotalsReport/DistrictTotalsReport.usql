@@ -1,0 +1,63 @@
+// Auto-generated header code
+
+// Auto-generated header code ended
+
+// User script
+
+DECLARE @postcodePath string = "/sourcedata/postcodes/Postcodes.csv";
+DECLARE @postcodeDgPath string = "/sourcedata/postcodedg/Postcode_Estimates_1_{filename}.csv";
+DECLARE @districtPath string = "/sourcedata/districts/Districts.csv";
+DECLARE @outputPath string = "/output/districttotals.csv";
+
+@postcodes =
+    EXTRACT postcode string,
+            districtcode string,
+            latitude float,
+            longitude float
+    FROM @postcodePath
+    USING Extractors.Csv(skipFirstNRows : 1);
+
+@postcodeDemographics =
+    EXTRACT postcode string,
+            total int,
+            males int,
+            females int,
+            occupiedHouseholds int,
+            filename string
+    FROM @postcodeDgPath
+    USING Extractors.Csv(skipFirstNRows : 1);
+
+@districts =
+    EXTRACT districtcode string,
+            district string
+    FROM @districtPath
+    USING Extractors.Csv(skipFirstNRows : 1, quoting : true);
+
+@mergedData =
+    SELECT d.district,
+           SUM(pd.total) AS total,
+           SUM(pd.males) AS males,
+           SUM(pd.females) AS females,
+           SUM(pd.occupiedHouseholds) AS occupiedHouseholds
+    FROM @postcodes AS p
+         INNER JOIN
+             @postcodeDemographics AS pd
+         ON p.postcode == pd.postcode
+         INNER JOIN
+             @districts AS d
+         ON p.districtcode == d.districtcode
+GROUP BY d.district;
+
+OUTPUT @mergedData
+TO @outputPath
+ORDER BY district ASC
+USING Outputters.Csv(outputHeader:true, quoting : true);
+
+
+// User script ended
+
+// Auto-generated footer code
+
+
+// Auto-generated footer code ended
+

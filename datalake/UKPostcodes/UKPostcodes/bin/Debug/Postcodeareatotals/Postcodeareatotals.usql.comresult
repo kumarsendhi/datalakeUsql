@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<CommonCompileResult xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ScriptPath>C:\datalake\UKPostcodes\UKPostcodes\bin\Debug\Postcodeareatotals\Postcodeareatotals.usql</ScriptPath>
+  <ScopeVertexDefinitionPath>C:\datalake\UKPostcodes\UKPostcodes\bin\Debug\Postcodeareatotals\ScopeVertexDef.xml</ScopeVertexDefinitionPath>
+  <AlgebraPath>C:\datalake\UKPostcodes\UKPostcodes\bin\Debug\Postcodeareatotals\__script__.abr</AlgebraPath>
+  <ErrorList />
+  <WarningList />
+  <HelperCodePath>C:\datalake\UKPostcodes\UKPostcodes\bin\Debug\Postcodeareatotals\__ScopeCodeGenEngine__.dll.cpp</HelperCodePath>
+  <ResourceList />
+  <ReferenceList />
+  <ClusterResourceList />
+  <InputStreams>
+    <string>C:\Users\seyonadmin\AppData\Local\USQLDataRoot\postcodes\InitialDataFile.csv</string>
+  </InputStreams>
+  <OutputStreams>
+    <OutputStreamInfo>
+      <Path>C:\Users\seyonadmin\AppData\Local\USQLDataRoot\output/PostcodeAreaTotals.csv</Path>
+      <SchemaString>PostcodeArea:string,NoPersons:long?</SchemaString>
+      <IsBinary>false</IsBinary>
+      <IsSStream>false</IsSStream>
+    </OutputStreamInfo>
+  </OutputStreams>
+  <LocalRunCachePath>C:\datalake\UKPostcodes\UKPostcodes\bin\Debug\Postcodeareatotals</LocalRunCachePath>
+  <LocalRunTempPath>C:\datalake\UKPostcodes\UKPostcodes\bin\Debug\Postcodeareatotals\_TMP</LocalRunTempPath>
+  <LocalRunRuntimePath>C:\datalake\UKPostcodes\UKPostcodes\bin\Debug\Postcodeareatotals</LocalRunRuntimePath>
+  <ScopeWorkingDir>C:\datalake\UKPostcodes\UKPostcodes\bin\Debug\Postcodeareatotals</ScopeWorkingDir>
+</CommonCompileResult>

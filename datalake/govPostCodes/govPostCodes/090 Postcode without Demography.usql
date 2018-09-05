@@ -1,0 +1,27 @@
+﻿USE DATABASE UkPostcodes;
+USE SCHEMA PostcodeData;
+
+//@records = SELECT p.Postcode
+//    FROM Postcodes AS p
+//         WHERE p.Postcode NOT IN
+//(SELECT pd.Postcode FROM PostcodeDemographics AS pd);
+
+//@records = SELECT p.Postcode
+//    FROM Postcodes AS p
+//         LEFT JOIN
+//             PostcodeDemographics AS pd
+//         ON p.Postcode == pd.Postcode
+//         WHERE pd.Postcode IS NULL;
+
+
+@records =
+    SELECT p.Postcode
+    FROM Postcodes AS p
+         LEFT ANTISEMIJOIN
+             PostcodeDemographics AS pd
+         ON p.Postcode == pd.Postcode;
+
+OUTPUT @records
+TO "/output/postcodeswithoutdemographics.tsv"
+ORDER BY Postcode ASC
+USING Outputters.Tsv(outputHeader : true, quoting : true);

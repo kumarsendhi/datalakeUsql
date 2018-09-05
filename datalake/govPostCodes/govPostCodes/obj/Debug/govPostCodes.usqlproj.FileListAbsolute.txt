@@ -1,0 +1,4 @@
+C:\datalake\govPostCodes\govPostCodes\obj\Debug\govPostCodes.usqlproj.CoreCompileInputs.cache
+C:\datalake\govPostCodes\govPostCodes\bin\Debug\govPostCodes.usqlpack
+C:\datalake\govPostCodes\govPostCodes\obj\Debug\govPostCodes.usqlpack
+C:\datalake\govPostCodes\govPostCodes\obj\Debug\govPostCodes.usqlprojAssemblyReference.cache

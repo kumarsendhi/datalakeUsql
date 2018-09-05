@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CSSRelatedInfo>
+  <OptimizerPlanInfo signatureVersion="1">
+    <TableScan present="False" occurrence="0" />
+    <PartitionSeek present="False" occurrence="0" />
+    <PartitionRange present="False" occurrence="0" />
+    <IndexSeek present="False" occurrence="0" />
+    <IndexRange present="True" occurrence="2" />
+    <Join present="True" occurrence="1" />
+    <GroupByAgg present="False" occurrence="0" />
+    <UDProcessor present="False" occurrence="0" />
+    <UDReducer present="False" occurrence="0" />
+    <UDCombiner present="False" occurrence="0" />
+    <UDMultiProcessor present="False" occurrence="0" />
+    <Top present="False" occurrence="0" />
+    <Costs>
+      <ExtractCardinality>2357355</ExtractCardinality>
+      <InputSize>55249290</InputSize>
+      <OutputCardinality>1047024</OutputCardinality>
+      <NumTable>2</NumTable>
+      <DataTransferVolume>0</DataTransferVolume>
+      <Latency>-1</Latency>
+      <TotalCost>-1</TotalCost>
+      <EstimatedNumEdges>0</EstimatedNumEdges>
+    </Costs>
+    <OptimizerTrees>
+<InputTree>
+    <LogOp Id="LogOp_Output" Table="C:\Users\seyonadmin\AppData\Local\USQLDataRoot\output/postcodeswithoutdemographics.tsv" XMode="All" SortColumn="Postcode ASC" Out="Postcode" Udf="IOutputter">
+      <OpInfo><TableGroupProperties Grp="8.0" Remotable="False" Card="1.04702e+06" AvgRowLength="7"/></OpInfo>
+      <LogOp Id="LogOp_OrderBy" SortColumn="Postcode ASC">
+        <OpInfo><TableGroupProperties Grp="7.0" Remotable="False" Card="1.04702e+06" AvgRowLength="23"/></OpInfo>
+        <LogOp Id="LogOp_LeftAntiSemiJoin">
+          <OpInfo><TableGroupProperties Grp="6.0" Remotable="False" Card="1.04702e+06" AvgRowLength="23"/></OpInfo>
+          <LogOp Id="LogOp_Get" USqlTableName="localcomputeaccount.UkPostcodes.PostcodeData.Postcodes" Table="C:\Users\seyonadmin\AppData\Local\USQLDataRoot\_catalog_\database\8a33ae21-042d-4bf8-a23e-11a8f6641f79\schema\0a543926-2519-4ed8-9584-1c714f05eece\table\ae85c4d7-e2ef-4f88-80ee-a86785a817de\6b5b6e38-2105-4481-b948-0247dc619518.ss" XMode="Parallel" PartitionType="Hash" Partitioning="Postcode" Partitions="2" PS="1:Base1" SortColumn="Postcode ASC" StreamId="8569d94e-81b6-4fe1-8087-af85d7d18556">
+            <OpInfo><TableGroupProperties Grp="0.0" Remotable="False" Card="1.04858e+06" AvgRowLength="23"/></OpInfo>
+          </LogOp>
+          <LogOp Id="LogOp_RestrRemap" Remove="Postcode" Remap="Postcode1#Postcode">
+            <OpInfo><TableGroupProperties Grp="2.0" Remotable="False" Card="1.30878e+06" AvgRowLength="23"/></OpInfo>
+            <LogOp Id="LogOp_Get" USqlTableName="localcomputeaccount.UkPostcodes.PostcodeData.PostcodeDemographics" Table="C:\Users\seyonadmin\AppData\Local\USQLDataRoot\_catalog_\database\8a33ae21-042d-4bf8-a23e-11a8f6641f79\schema\0a543926-2519-4ed8-9584-1c714f05eece\table\885a2922-35c5-4010-97fa-284290aef70a\6a07fa51-ae48-4492-bc5a-6a400e3eb948.ss" XMode="Parallel" PartitionType="Hash" Partitioning="Postcode" Partitions="2" PS="2:Base2" SortColumn="Postcode ASC" StreamId="8569d94e-81b6-4fe1-8087-af85d7d18556">
+              <OpInfo><TableGroupProperties Grp="1.0" Remotable="False" Card="1.30878e+06" AvgRowLength="23"/></OpInfo>
+            </LogOp>
+          </LogOp>
+          <ScaOp Id="ScaOp_Comp" CompOp="x_cmpEq"><OpInfo><ScalarGroupProperties Grp="5.0"/></OpInfo>
+            <ScaOp Id="ScaOp_Identifier" Column="Postcode"><OpInfo><ScalarGroupProperties Grp="3.0"/></OpInfo>
+            </ScaOp>
+            <ScaOp Id="ScaOp_Identifier" Column="Postcode1"><OpInfo><ScalarGroupProperties Grp="4.0"/></OpInfo>
+            </ScaOp>
+          </ScaOp>
+        </LogOp>
+      </LogOp>
+    </LogOp>
+</InputTree>
+<OutputTree>
+    <PhyOp Id="PhyOp_Output" Table="C:\Users\seyonadmin\AppData\Local\USQLDataRoot\output/postcodeswithoutdemographics.tsv" XMode="Serial" SortColumn="Postcode ASC" Out="Postcode" Udf="IOutputter">
+      <OpInfo><TableGroupProperties Grp="8.1" Remotable="False" Card="1.04702e+06" AvgRowLength="7" PrtnSkewFactor="1" HT="17717222656899997539:228::4:18003134543809641936" HTS="13288321236472541913"/><Costs TotalCosts="82.1797" BubbleCost="82.1797" BubblePartitions="398"/></OpInfo>
+      <PhyOp Id="PhyOp_NOP" XMode="Serial" SortColumn="Postcode ASC">
+        <OpInfo><TableGroupProperties Grp="7.1" Remotable="False" Card="1.04702e+06" AvgRowLength="7" PrtnSkewFactor="1" HT="18003134543809641936:226::3:12096346052298672721" HTS="198868530506451552"/><Costs TotalCosts="18.9418" BubbleCost="18.9418" BubblePartitions="398"/></OpInfo>
+        <PhyOp Id="PhyOp_MergeJoin" JoinType="x_jtLeftAntiSemi" ParallelJoinType="Serial" LeftKey="Postcode ASC" RightKey="Postcode1 ASC">
+          <OpInfo><TableGroupProperties Grp="6.1" Remotable="False" Card="1.04702e+06" AvgRowLength="7" PrtnSkewFactor="1" HT="12096346052298672721:29::2:8777285732146113691" HTS="13769199316736597030"/><Costs TotalCosts="18.9418" BubbleCost="18.9418" BubblePartitions="398"/></OpInfo>
+          <PhyOp Id="PhyOp_Sort" SortColumn="Postcode ASC">
+            <OpInfo><TableGroupProperties Grp="0.2" Remotable="False" Card="1.04858e+06" AvgRowLength="7" PrtnSkewFactor="1" HT="12810883639723211000:197::0:0" HTS="5606275471473011356"/><Costs TotalCosts="16.4692" BubbleCost="16.4692" BubblePartitions="399"/></OpInfo>
+            <PhyOp Id="PhyOp_Range" USqlTableName="localcomputeaccount.UkPostcodes.PostcodeData.Postcodes" Table="C:\Users\seyonadmin\AppData\Local\USQLDataRoot\_catalog_\database\8a33ae21-042d-4bf8-a23e-11a8f6641f79\schema\0a543926-2519-4ed8-9584-1c714f05eece\table\ae85c4d7-e2ef-4f88-80ee-a86785a817de\6b5b6e38-2105-4481-b948-0247dc619518.ss" XMode="Parallel" PartitionType="Hash" Partitioning="Postcode" Partitions="2" PS="1:Base1" SortColumn="Postcode ASC" StreamId="8569d94e-81b6-4fe1-8087-af85d7d18556" Direction="ASC">
+              <OpInfo><TableGroupProperties Grp="0.3" Remotable="False" Card="1.04858e+06" AvgRowLength="7" PrtnSkewFactor="1.00012" HT="12810883639723211000:197::0:0" HTS="5606275471473011356"/><Costs TotalCosts="12.9836" BubbleCost="12.9836" BubblePartitions="399"/></OpInfo>
+            </PhyOp>
+          </PhyOp>
+          <PhyOp Id="PhyOp_Sort" SortColumn="Postcode1 ASC">
+            <OpInfo><TableGroupProperties Grp="2.2" Remotable="False" Card="1.30878e+06" AvgRowLength="7" PrtnSkewFactor="1" HT="7163545656323437945:120::1:4226213715659977882" HTS="9075108038770018796"/><Costs TotalCosts="18.4986" BubbleCost="18.4986" BubblePartitions="399"/></OpInfo>
+            <PhyOp Id="PhyOp_RestrRemap">
+              <OpInfo><TableGroupProperties Grp="2.3" Remotable="False" Card="1.30878e+06" AvgRowLength="7" PrtnSkewFactor="1" HT="7163545656323437945:120::1:4226213715659977882" HTS="9075108038770018796"/><Costs TotalCosts="14.9661" BubbleCost="14.9661" BubblePartitions="399"/></OpInfo>
+              <PhyOp Id="PhyOp_Range" USqlTableName="localcomputeaccount.UkPostcodes.PostcodeData.PostcodeDemographics" Table="C:\Users\seyonadmin\AppData\Local\USQLDataRoot\_catalog_\database\8a33ae21-042d-4bf8-a23e-11a8f6641f79\schema\0a543926-2519-4ed8-9584-1c714f05eece\table\885a2922-35c5-4010-97fa-284290aef70a\6a07fa51-ae48-4492-bc5a-6a400e3eb948.ss" XMode="Parallel" PartitionType="Hash" Partitioning="Postcode" Partitions="2" PS="2:Base2" SortColumn="Postcode ASC" StreamId="8569d94e-81b6-4fe1-8087-af85d7d18556" Direction="ASC">
+                <OpInfo><TableGroupProperties Grp="1.3" Remotable="False" Card="1.30878e+06" AvgRowLength="7" PrtnSkewFactor="1.00032" HT="4226213715659977882:197::0:0" HTS="8502467847264191797"/><Costs TotalCosts="14.9661" BubbleCost="14.9661" BubblePartitions="399"/></OpInfo>
+              </PhyOp>
+            </PhyOp>
+          </PhyOp>
+          <ScaOp Id="ScaOp_Comp" CompOp="x_cmpEq"><OpInfo><ScalarGroupProperties Grp="5.0"/></OpInfo>
+            <ScaOp Id="ScaOp_Identifier" Column="Postcode"><OpInfo><ScalarGroupProperties Grp="3.0"/></OpInfo>
+            </ScaOp>
+            <ScaOp Id="ScaOp_Identifier" Column="Postcode1"><OpInfo><ScalarGroupProperties Grp="4.0"/></OpInfo>
+            </ScaOp>
+          </ScaOp>
+        </PhyOp>
+      </PhyOp>
+    </PhyOp>
+</OutputTree>
+</OptimizerTrees>
+  </OptimizerPlanInfo>
+  <ScopeCounters>
+    <Counter Name="Overall" Value="24.8015896" Unit="second" Intervals="1" />
+    <Counter Name="FrontEndRun" Value="3.6644286" Unit="second" Intervals="1" />
+    <Counter Name="AstBuilder" Value="1.279736" Unit="second" Intervals="1" />
+    <Counter Name="BinderPass" Value="1.5292221" Unit="second" Intervals="1" />
+    <Counter Name="DdlResolver" Value="0.5407323" Unit="second" Intervals="1" />
+    <Counter Name="ErrorReporterPass" Value="0.0359087" Unit="second" Intervals="1" />
+    <Counter Name="InputOutputPass" Value="0.6886378" Unit="second" Intervals="1" />
+    <Counter Name="GenerateOptTreePass" Value="0.517718" Unit="second" Intervals="1" />
+    <Counter Name="ResourceReferencePass" Value="0.004054" Unit="second" Intervals="1" />
+    <Counter Name="SemanticAnalyzerPass" Value="0.0633218" Unit="second" Intervals="1" />
+    <Counter Name="SyntaxVerifier" Value="0.1613882" Unit="second" Intervals="1" />
+    <Counter Name="ExpressionBinding" Value="1.3778035" Unit="second" Intervals="3" />
+    <Counter Name="RoslynBinding" Value="2.4793086" Unit="second" Intervals="2" />
+    <Counter Name="RoslynStartup" Value="0.1454323" Unit="second" Intervals="1" />
+    <Counter Name="RoslynFirstCall" Value="1.1130504" Unit="second" Intervals="1" />
+    <Counter Name="ConstantFolding" Value="22.8161902" Unit="second" Intervals="1" />
+    <Counter Name="RoslynParsing" Value="0.0415433" Unit="second" Intervals="2" />
+    <Counter Name="RoslynPostSemantic" Value="0.4321276" Unit="second" Intervals="2" />
+    <Counter Name="RoslynPreSemantic" Value="0.0699736" Unit="second" Intervals="2" />
+    <Counter Name="RoslynSemantic" Value="0.8043279" Unit="second" Intervals="2" />
+    <Counter Name="QualifiedColumnBinding" Value="0.0043281" Unit="second" Intervals="1" />
+    <Counter Name="OptimizerRun" Value="0.7040003" Unit="second" Intervals="1" />
+    <Counter Name="OptimizerWait" Value="1.3E-05" Unit="second" Intervals="1" />
+    <Counter Name="ComputeSignature" Value="1.21E-05" Unit="second" Intervals="1" />
+    <Counter Name="CreateSplitersOrSpools" Value="0.0078899" Unit="second" Intervals="1" />
+    <Counter Name="PostProcessExecutionPlan" Value="0.0080406" Unit="second" Intervals="1" />
+    <Counter Name="CreateWhereSelectEnumerators" Value="0.0561579" Unit="second" Intervals="1" />
+    <Counter Name="ComputePayloadMetadata" Value="0.0032183" Unit="second" Intervals="1" />
+    <Counter Name="SStreamStageProcessing" Value="0.0040695" Unit="second" Intervals="1" />
+    <Counter Name="ValidateStages" Value="0.0036943" Unit="second" Intervals="1" />
+    <Counter Name="CompileToAlgebra" Value="0.0798294" Unit="second" Intervals="1" />
+    <Counter Name="SplitScopeVertices" Value="0.0397351" Unit="second" Intervals="1" />
+    <Counter Name="EstimateMemorySize" Value="0.0022214" Unit="second" Intervals="1" />
+    <Counter Name="CalculateBubbles" Value="0.000284" Unit="second" Intervals="1" />
+    <Counter Name="BackEndRun" Value="19.0103135" Unit="second" Intervals="1" />
+    <Counter Name="AdornAllWithMemoryModel" Value="0.0607213" Unit="second" Intervals="1" />
+    <Counter Name="AlgebraAndManagedCodeGen" Value="0.2973175" Unit="second" Intervals="1" />
+    <Counter Name="AnnotateIntermediateResults" Value="0.0069861" Unit="second" Intervals="1" />
+    <Counter Name="CodeCompiling" Value="18.0303529" Unit="second" Intervals="1" />
+    <Counter Name="CodeGeneration" Value="0.6656866" Unit="second" Intervals="1" />
+    <Counter Name="CreateCppReadyStage" Value="0.0131259" Unit="second" Intervals="1" />
+    <Counter Name="DecodeAstToJsonAsync" Value="0.0783133" Unit="second" Intervals="1" />
+    <Counter Name="EmitCompilationResult" Value="0.8065002" Unit="second" Intervals="8" />
+    <Counter Name="ManagedCodeEmission" Value="0.0092172" Unit="second" Intervals="1" />
+    <Counter Name="NativeCodeGeneration" Value="0.6601746" Unit="second" Intervals="1" />
+    <Counter Name="SMS" Value="0.1000593" Unit="second" Intervals="1" />
+    <Counter Name="SStreamMetadataAsync" Value="1.194186" Unit="second" Intervals="2" />
+    <Counter Name="SStreamMetadataWait" Value="3.3E-05" Unit="second" Intervals="2" />
+    <Counter Name="WaitForAsyncFiles" Value="0.0195323" Unit="second" Intervals="1" />
+    <Counter Name="Playback" Value="0.7395214" Unit="second" Intervals="2" />
+    <Counter Name="Table Files Read" Value="2" Unit="count" />
+    <Counter Name="CQO - Init" Value="0.0198646" Unit="second" />
+    <Counter Name="CQO - CopyIn" Value="0.1411096" Unit="second" />
+    <Counter Name="CQO - Search - Init" Value="0.0001688" Unit="second" />
+    <Counter Name="CQO - Search - NNF" Value="0.0025535" Unit="second" />
+    <Counter Name="CQO - Search - PreOptimization" Value="0.000618" Unit="second" />
+    <Counter Name="CQO - Search - Simplification" Value="0.0022189" Unit="second" />
+    <Counter Name="CQO - Search - Join Reordering" Value="9.41E-05" Unit="second" />
+    <Counter Name="CQO - Search - Expression Sharing" Value="0.0003344" Unit="second" />
+    <Counter Name="CQO - Search - Optimization" Value="0.0015779" Unit="second" />
+    <Counter Name="CQO - Search - Subtotal" Value="0.0380493" Unit="second" />
+    <Counter Name="CQO - Showplan" Value="0.0087662" Unit="second" />
+    <Counter Name="CQO - Stage Generation" Value="0.2019207" Unit="second" />
+    <Counter Name="CQO - PostOptimization" Value="0.0074135" Unit="second" />
+    <Counter Name="Working Set" Value="106076" Unit="KB" />
+    <Counter Name="Peak Working Set" Value="130496" Unit="KB" />
+    <Counter Name="Private Memory" Value="175356" Unit="KB" />
+    <Counter Name="Virtual Memory" Value="737444" Unit="KB" />
+    <Counter Name="Total CPU" Value="7.53125" Unit="second" />
+    <Counter Name="CQO - Total" Value="0.4352403" Unit="second" />
+  </ScopeCounters>
+</CSSRelatedInfo>

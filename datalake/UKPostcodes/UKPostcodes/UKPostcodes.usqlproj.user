@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <StartFile>Postcodeareatotals.usql</StartFile>
+    <ActiveFile>Postcodeareatotals.usql</ActiveFile>
+    <BuildClusterPlanProperty>False</BuildClusterPlanProperty>
+  </PropertyGroup>
+  <ItemGroup>
+    <ScriptUserData Include="Postcodeareatotals.usql">
+      <UseLocalComputeAccount>false</UseLocalComputeAccount>
+      <LocalComputeAccount>DataLakeLocalCA:localcomputeaccount</LocalComputeAccount>
+      <LocalDatabase>master</LocalDatabase>
+      <LocalSchema>dbo</LocalSchema>
+      <ClusterComputeAccount>DataLakeCA:seyondataanalytics (kumar.krishnamurthy@emc.com)</ClusterComputeAccount>
+      <ClusterDatabase>master</ClusterDatabase>
+      <ClusterSchema>dbo</ClusterSchema>
+      <RecurrenceName>Postcodeareatotals_ADLVSTool</RecurrenceName>
+      <RecurrenceId>1724a3d3-ed5a-4e6f-9b0a-c283cd5bbb2c</RecurrenceId>
+      <Parallelism>5</Parallelism>
+    </ScriptUserData>
+  </ItemGroup>
+</Project>

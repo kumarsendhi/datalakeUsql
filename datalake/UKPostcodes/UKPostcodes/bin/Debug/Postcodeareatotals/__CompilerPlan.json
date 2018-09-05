@@ -1,0 +1,28 @@
+﻿{
+"CompilerPlanStart":"9\/5\/2018 10:57:01 AM"
+,
+"Settings":"-c++ -mp -pdb Partial -OUTPUT_PATH C:\\Users\\seyonadmin\\AppData\\Local\\USQLDataRoot -cosmosCluster localhost -apEnvironment Default -apCluster localhost -Off EnableScopeVertexResourceMode -On ForceShadowCopy -On ADL -Off Sirius -On USQL -Off SQLIPSQLProxy -Off SQLIPSQLProxyNative -Off PolarisScaleUp -buckets 1 -SplitPartitionThreshold 52428800 -ClientVersion 10.2.2.0"
+,
+"planNodes":
+[
+{
+"statementText":" EXTRACT Postcode string,PersonTotal int,DistrictName stringFROM \"\/postcodes\/InitialDataFile.c"
+,
+"NodeName":"QueryStatement"
+}
+,
+{
+"statementText":" SELECT Postcode.Substring(0,4) AS PostcodeArea, SUM(PersonTotal) AS NoPersonsFROM @postcoderows"
+,
+"NodeName":"QueryStatement"
+}
+,
+{
+"statementText":"OUTPUT @sumresults TO \"\/output\/PostcodeAreaTotals.csv\"ORDER BY PostcodeArea ASCUSING Outputt"
+,
+"NodeName":"OutputStatement"
+}
+]
+,
+"CompilerPlanEnd":"9\/5\/2018 10:57:01 AM"
+}

@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <StartFile>090 Postcode without Demography.usql</StartFile>
+    <ActiveFile>090 Postcode without Demography.usql</ActiveFile>
+    <BuildClusterPlanProperty>False</BuildClusterPlanProperty>
+  </PropertyGroup>
+  <ItemGroup>
+    <ScriptUserData Include="010 Create UkPostcodes Database.usql">
+      <UseLocalComputeAccount>false</UseLocalComputeAccount>
+      <LocalComputeAccount>DataLakeLocalCA:localcomputeaccount</LocalComputeAccount>
+      <LocalDatabase>master</LocalDatabase>
+      <LocalSchema>dbo</LocalSchema>
+      <ClusterComputeAccount>DataLakeCA:seyondataanalytics (kumar.krishnamurthy@emc.com)</ClusterComputeAccount>
+      <ClusterDatabase>master</ClusterDatabase>
+      <ClusterSchema>dbo</ClusterSchema>
+      <RecurrenceName>010 Create UkPostcodes Database_ADLVSTool</RecurrenceName>
+      <RecurrenceId>267f7d57-17f2-413e-97b4-27cc2f970ce3</RecurrenceId>
+      <Parallelism>5</Parallelism>
+    </ScriptUserData>
+    <ScriptUserData Include="020 Create PostcodeData Schema.usql">
+      <RecurrenceName>020 Create PostcodeData Schema_ADLVSTool</RecurrenceName>
+      <RecurrenceId>308ba938-385d-4268-a27d-a570e5d8c5fc</RecurrenceId>
+      <Parallelism>5</Parallelism>
+    </ScriptUserData>
+    <ScriptUserData Include="030 Create Postcodes Table.usql">
+      <UseLocalComputeAccount>false</UseLocalComputeAccount>
+      <LocalComputeAccount>DataLakeLocalCA:localcomputeaccount</LocalComputeAccount>
+      <LocalDatabase>master</LocalDatabase>
+      <LocalSchema>dbo</LocalSchema>
+      <ClusterComputeAccount>DataLakeCA:seyondataanalytics (kumar.krishnamurthy@emc.com)</ClusterComputeAccount>
+      <ClusterDatabase>master</ClusterDatabase>
+      <ClusterSchema>dbo</ClusterSchema>
+      <RecurrenceName>030 Create Postcodes Table_ADLVSTool</RecurrenceName>
+      <RecurrenceId>393f7a0d-3584-4beb-8169-449dec39b2e8</RecurrenceId>
+      <Parallelism>5</Parallelism>
+    </ScriptUserData>
+    <ScriptUserData Include="040 Create Postcodes Demographic Table.usql">
+      <UseLocalComputeAccount>false</UseLocalComputeAccount>
+      <LocalComputeAccount>DataLakeLocalCA:localcomputeaccount</LocalComputeAccount>
+      <LocalDatabase>master</LocalDatabase>
+      <LocalSchema>dbo</LocalSchema>
+      <ClusterComputeAccount>DataLakeCA:seyondataanalytics (kumar.krishnamurthy@emc.com)</ClusterComputeAccount>
+      <ClusterDatabase>master</ClusterDatabase>
+      <ClusterSchema>dbo</ClusterSchema>
+      <RecurrenceName>040 Create Postcodes Demographic Table_ADLVSTool</RecurrenceName>
+      <RecurrenceId>4350d1b8-ffd6-42cb-b39c-4a5d7ba6c845</RecurrenceId>
+      <Parallelism>5</Parallelism>
+    </ScriptUserData>
+    <ScriptUserData Include="050 Create Districts Table.usql">
+      <UseLocalComputeAccount>false</UseLocalComputeAccount>
+      <LocalComputeAccount>DataLakeLocalCA:localcomputeaccount</LocalComputeAccount>
+      <LocalDatabase>master</LocalDatabase>
+      <LocalSchema>dbo</LocalSchema>
+      <ClusterComputeAccount>DataLakeCA:seyondataanalytics (kumar.krishnamurthy@emc.com)</ClusterComputeAccount>
+      <ClusterDatabase>master</ClusterDatabase>
+      <ClusterSchema>dbo</ClusterSchema>
+      <RecurrenceName>050 Create Districts Table_ADLVSTool</RecurrenceName>
+      <RecurrenceId>1bcbf41e-5b6f-41dc-a02d-4ce899f347b6</RecurrenceId>
+      <Parallelism>5</Parallelism>
+    </ScriptUserData>
+    <ScriptUserData Include="060 Populate Tables.usql">
+      <UseLocalComputeAccount>false</UseLocalComputeAccount>
+      <LocalComputeAccount>DataLakeLocalCA:localcomputeaccount</LocalComputeAccount>
+      <LocalDatabase>master</LocalDatabase>
+      <LocalSchema>dbo</LocalSchema>
+      <ClusterComputeAccount>DataLakeCA:seyondataanalytics (kumar.krishnamurthy@emc.com)</ClusterComputeAccount>
+      <ClusterDatabase>master</ClusterDatabase>
+      <ClusterSchema>dbo</ClusterSchema>
+      <RecurrenceName>060 Populate Tables_ADLVSTool</RecurrenceName>
+      <RecurrenceId>d87fcd10-84c9-4b0d-bd03-30d0dcad6a5e</RecurrenceId>
+      <Parallelism>5</Parallelism>
+    </ScriptUserData>
+    <ScriptUserData Include="070 Postcode Area Count Report.usql">
+      <UseLocalComputeAccount>true</UseLocalComputeAccount>
+      <LocalComputeAccount>DataLakeLocalCA:localcomputeaccount</LocalComputeAccount>
+      <LocalDatabase>master</LocalDatabase>
+      <LocalSchema>dbo</LocalSchema>
+    </ScriptUserData>
+    <ScriptUserData Include="080 Postcode Area Top10 Report.usql">
+      <UseLocalComputeAccount>true</UseLocalComputeAccount>
+      <LocalComputeAccount>DataLakeLocalCA:localcomputeaccount</LocalComputeAccount>
+      <LocalDatabase>master</LocalDatabase>
+      <LocalSchema>dbo</LocalSchema>
+    </ScriptUserData>
+    <ScriptUserData Include="090 Postcode without Demography.usql">
+      <UseLocalComputeAccount>true</UseLocalComputeAccount>
+      <LocalComputeAccount>DataLakeLocalCA:localcomputeaccount</LocalComputeAccount>
+      <LocalDatabase>master</LocalDatabase>
+      <LocalSchema>dbo</LocalSchema>
+    </ScriptUserData>
+    <ScriptUserData Include="DistrictTotalsReport.usql">
+      <UseLocalComputeAccount>false</UseLocalComputeAccount>
+      <LocalComputeAccount>DataLakeLocalCA:localcomputeaccount</LocalComputeAccount>
+      <LocalDatabase>master</LocalDatabase>
+      <LocalSchema>dbo</LocalSchema>
+      <ClusterComputeAccount>DataLakeCA:seyondataanalytics (kumar.krishnamurthy@emc.com)</ClusterComputeAccount>
+      <ClusterDatabase>master</ClusterDatabase>
+      <ClusterSchema>dbo</ClusterSchema>
+      <RecurrenceName>DistrictTotalsReport_ADLVSTool</RecurrenceName>
+      <RecurrenceId>b7a2005b-f080-4bb0-bded-ff49e977b531</RecurrenceId>
+      <Parallelism>5</Parallelism>
+    </ScriptUserData>
+  </ItemGroup>
+</Project>

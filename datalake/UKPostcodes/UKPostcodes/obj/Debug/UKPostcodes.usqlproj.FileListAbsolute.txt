@@ -1,0 +1,3 @@
+C:\datalake\UKPostcodes\UKPostcodes\bin\Debug\UKPostcodes.usqlpack
+C:\datalake\UKPostcodes\UKPostcodes\obj\Debug\UKPostcodes.usqlproj.CoreCompileInputs.cache
+C:\datalake\UKPostcodes\UKPostcodes\obj\Debug\UKPostcodes.usqlpack

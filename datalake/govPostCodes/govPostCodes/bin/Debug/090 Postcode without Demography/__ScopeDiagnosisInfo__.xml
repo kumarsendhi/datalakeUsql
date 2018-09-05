@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<OperatorPhyMapping>
+  <Mapping OperatorId="Join_5" PhyPlanGroupNo="6.1" />
+</OperatorPhyMapping>

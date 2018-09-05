@@ -1,0 +1,14 @@
+﻿USE DATABASE UkPostcodes;
+
+USE SCHEMA PostcodeData;
+
+DROP TABLE IF EXISTS Districts;
+
+CREATE TABLE IF NOT EXISTS Districts
+(
+    DistrictCode string,
+    District string,
+    INDEX idx_Districts
+    CLUSTERED (DistrictCode ASC)
+    DISTRIBUTED BY HASH(DistrictCode)
+);

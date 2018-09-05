@@ -1,0 +1,83 @@
+// Auto-generated header code
+
+// Auto-generated header code ended
+
+// User script
+
+USE DATABASE UkPostcodes;
+USE SCHEMA PostcodeData;
+
+DECLARE @postcodePath string = "/sourcedata/postcodes/Postcodes.csv";
+DECLARE @postcodeDgPath string = "/sourcedata/postcodedg/Postcode_Estimates_1_{filename}.csv";
+DECLARE @districtPath string = "/sourcedata/districts/Districts.csv";
+//DECLARE @outputPath string = "/output/districttotals.csv";
+
+@postcodes =
+    EXTRACT postcode string,
+            districtcode string,
+            latitude float,
+            longitude float
+    FROM @postcodePath
+    USING Extractors.Csv(skipFirstNRows : 1);
+
+@postcodeDemographics =
+    EXTRACT postcode string,
+            total int,
+            males int,
+            females int,
+            occupiedHouseholds int,
+            filename string
+    FROM @postcodeDgPath
+    USING Extractors.Csv(skipFirstNRows : 1);
+
+@districts =
+    EXTRACT districtcode string,
+            district string
+    FROM @districtPath
+    USING Extractors.Csv(skipFirstNRows : 1, quoting : true);
+
+INSERT INTO Postcodes 
+(
+    Postcode, 
+    DistrictCode, 
+    Latitude, 
+    Longitude
+)
+SELECT postcode,
+       districtcode,
+       latitude,
+       longitude
+FROM @postcodes;
+
+
+INSERT INTO PostcodeDemographics 
+(
+    Postcode, 
+    Total, 
+    Males, 
+    Females,
+OccupiedHouseholds
+)
+SELECT postcode, 
+    total, 
+    males, 
+    females,
+occupiedHouseholds
+FROM @postcodeDemographics;
+
+INSERT INTO Districts 
+(
+    DistrictCode, 
+    District
+)
+SELECT districtcode,
+       district
+FROM @districts;
+
+// User script ended
+
+// Auto-generated footer code
+
+
+// Auto-generated footer code ended
+

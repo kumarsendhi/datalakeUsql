@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vertexCommand command="Start" jobType="None" managedMemorySize="0" vertexArg="ScopeEngine.dll -scopeVertex SV3_Combine -vertexNumber 0">
+  <inputs>
+    <input name="SV1_Extract_out0" path="C:\datalake\govPostCodes\govPostCodes\bin\Debug\090 Postcode without Demography\_TMP\scopetmpfile._SV1_Extract_out0" blockAligned="True" globalStartOffset="0" localStartOffset="0" localEndOffset="9437175" length="9437175" />
+    <input name="SV2_Extract_out0" path="C:\datalake\govPostCodes\govPostCodes\bin\Debug\090 Postcode without Demography\_TMP\scopetmpfile._SV2_Extract_out0" blockAligned="True" globalStartOffset="0" localStartOffset="0" localEndOffset="11779020" length="11779020" />
+  </inputs>
+  <outputs>
+    <output path="C:\datalake\govPostCodes\govPostCodes\bin\Debug\090 Postcode without Demography\_TMP\scopetmpfile._SV3_Combine_out0" isFirstOutputPiece="True" />
+  </outputs>
+</vertexCommand>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScopeVertices helperAssembly="__ScopeCodeGen__.dll" signatureVersion="1">
+  <ScopeVertex id="SV1_Extract" cppReady="true" nativeOnly="true">
+    <operator id="GetSStream_0" uid="1" assemblyName="ScopeRuntime.exe" className="ScopeRuntime.SStreamExtractor" signature="5606275471473011356!0!Strict">
+      <input id="GetSStream_0" uid="1" sqlIpTableName="localcomputeaccount.UkPostcodes.PostcodeData.Postcodes" schema="Postcode:string,DistrictCode:string,Latitude:float,Longitude:float" inputIndex="0" numberOfInputs="ALL" useInputDataName="true" />
+      <output id="GetSStream_0_Data0" uid="2" schema="Postcode:string" />
+    </operator>
+    <operator id="Process_1" uid="3" assemblyName="__ScopeCodeGen__.dll" className="ScopeSorter_1" args="-keys Postcode" signature="5606275471473011356!0!Strict">
+      <input id="GetSStream_0_Data0" uid="2" schema="Postcode:string" />
+      <output id="SV1_Extract_out0" uid="4" schema="Postcode:string" outputIndex="0" numberOfOutputs="1" />
+    </operator>
+  </ScopeVertex>
+  <ScopeVertex id="SV2_Extract" cppReady="true" nativeOnly="true">
+    <operator id="GetSStream_2" uid="5" assemblyName="ScopeRuntime.exe" className="ScopeRuntime.SStreamExtractor" signature="8502467847264191797!1!Strict">
+      <input id="GetSStream_2" uid="5" sqlIpTableName="localcomputeaccount.UkPostcodes.PostcodeData.PostcodeDemographics" schema="Postcode:string,Total:int,Males:int,Females:int,OccupiedHouseholds:int" inputIndex="0" numberOfInputs="ALL" useInputDataName="true" />
+      <output id="GetSStream_2_Data0" uid="6" schema="Postcode:string" />
+    </operator>
+    <operator id="Process_3" uid="7" assemblyName="__ScopeCodeGen__.dll" className="SqlFilterTransformer_2" signature="8502467847264191797!1!Strict">
+      <input id="GetSStream_2_Data0" uid="6" schema="Postcode:string" />
+      <output id="Process_3_Data0" uid="8" schema="Postcode1:string" />
+    </operator>
+    <operator id="Process_4" uid="9" assemblyName="__ScopeCodeGen__.dll" className="ScopeSorter_2" args="-keys Postcode1" signature="8502467847264191797!1!Strict">
+      <input id="Process_3_Data0" uid="8" schema="Postcode1:string" />
+      <output id="SV2_Extract_out0" uid="10" schema="Postcode1:string" outputIndex="0" numberOfOutputs="1" />
+    </operator>
+  </ScopeVertex>
+  <ScopeVertex id="SV3_Combine" cppReady="true" nativeOnly="true">
+    <operator id="Join_5" uid="11" assemblyName="__ScopeCodeGen__.dll" className="ScopeCombineWrapper_1" args="-key Postcode|Postcode1" signature="13769199316736597030!6!Strict">
+      <input id="SV1_Extract_out0" uid="4" schema="Postcode:string" inputIndex="0" numberOfInputs="1" />
+      <input id="SV2_Extract_out0" uid="10" schema="Postcode1:string" inputIndex="1" numberOfInputs="1" />
+      <output id="Join_5_Data0" uid="12" schema="Postcode:string" />
+    </operator>
+    <operator id="Output_6" uid="13" assemblyName="Microsoft.Analytics.Interfaces.dll" className="Microsoft.Analytics.Interfaces.IOutputter" signature="13288321236472541913!8!Strict">
+      <input id="Join_5_Data0" uid="12" schema="Postcode:string" />
+      <output id="SV3_Combine_out0" uid="13" schema="Postcode:string" outputIndex="0" numberOfOutputs="1" finalOutput="true" />
+    </operator>
+  </ScopeVertex>
+</ScopeVertices>

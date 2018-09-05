@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<CommonCompileResult xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ScriptPath>C:\datalake\govPostCodes\govPostCodes\bin\Debug\090 Postcode without Demography\090 Postcode without Demography.usql</ScriptPath>
+  <ScopeVertexDefinitionPath>C:\datalake\govPostCodes\govPostCodes\bin\Debug\090 Postcode without Demography\ScopeVertexDef.xml</ScopeVertexDefinitionPath>
+  <AlgebraPath>C:\datalake\govPostCodes\govPostCodes\bin\Debug\090 Postcode without Demography\__script__.abr</AlgebraPath>
+  <ErrorList />
+  <WarningList />
+  <HelperCodePath>C:\datalake\govPostCodes\govPostCodes\bin\Debug\090 Postcode without Demography\__ScopeCodeGenEngine__.dll.cpp</HelperCodePath>
+  <ResourceList />
+  <ReferenceList />
+  <ClusterResourceList />
+  <InputStreams>
+    <string>C:\Users\seyonadmin\AppData\Local\USQLDataRoot\_catalog_/database/8a33ae21-042d-4bf8-a23e-11a8f6641f79/schema/0a543926-2519-4ed8-9584-1c714f05eece/table/ae85c4d7-e2ef-4f88-80ee-a86785a817de/6b5b6e38-2105-4481-b948-0247dc619518.ss</string>
+    <string>C:\Users\seyonadmin\AppData\Local\USQLDataRoot\_catalog_/database/8a33ae21-042d-4bf8-a23e-11a8f6641f79/schema/0a543926-2519-4ed8-9584-1c714f05eece/table/885a2922-35c5-4010-97fa-284290aef70a/6a07fa51-ae48-4492-bc5a-6a400e3eb948.ss</string>
+  </InputStreams>
+  <OutputStreams>
+    <OutputStreamInfo>
+      <Path>C:\Users\seyonadmin\AppData\Local\USQLDataRoot\output/postcodeswithoutdemographics.tsv</Path>
+      <SchemaString>Postcode:string</SchemaString>
+      <IsBinary>false</IsBinary>
+      <IsSStream>false</IsSStream>
+    </OutputStreamInfo>
+  </OutputStreams>
+  <LocalRunCachePath>C:\datalake\govPostCodes\govPostCodes\bin\Debug\090 Postcode without Demography</LocalRunCachePath>
+  <LocalRunTempPath>C:\datalake\govPostCodes\govPostCodes\bin\Debug\090 Postcode without Demography\_TMP</LocalRunTempPath>
+  <LocalRunRuntimePath>C:\datalake\govPostCodes\govPostCodes\bin\Debug\090 Postcode without Demography</LocalRunRuntimePath>
+  <ScopeWorkingDir>C:\datalake\govPostCodes\govPostCodes\bin\Debug\090 Postcode without Demography</ScopeWorkingDir>
+</CommonCompileResult>

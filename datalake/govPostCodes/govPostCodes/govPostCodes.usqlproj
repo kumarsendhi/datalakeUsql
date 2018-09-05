@@ -1,0 +1,94 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>ff573f25-0287-4295-b19c-8dfb90a6372e</ProjectGuid>
+    <OutputType>File</OutputType>
+    <AssemblyName>govPostCodes.usqlpack</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <USQLProjectVersion>2</USQLProjectVersion>
+    <Name>govPostCodes</Name>
+    <RootNamespace>govPostCodes</RootNamespace>
+    <RuntimeVersion>default</RuntimeVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Script Include="010 Create UkPostcodes Database.usql" />
+    <Script Include="020 Create PostcodeData Schema.usql" />
+    <Script Include="030 Create Postcodes Table.usql" />
+    <Script Include="040 Create Postcodes Demographic Table.usql" />
+    <Script Include="050 Create Districts Table.usql" />
+    <Script Include="060 Populate Tables.usql" />
+    <Script Include="070 Postcode Area Count Report.usql" />
+    <Script Include="080 Postcode Area Top10 Report.usql" />
+    <Script Include="090 Postcode without Demography.usql" />
+    <Script Include="DistrictTotalsReport.usql" />
+    <ScriptCode Include="010 Create UkPostcodes Database.usql.cs">
+      <DependentUpon>010 Create UkPostcodes Database.usql</DependentUpon>
+    </ScriptCode>
+    <ScriptCode Include="020 Create PostcodeData Schema.usql.cs">
+      <DependentUpon>020 Create PostcodeData Schema.usql</DependentUpon>
+    </ScriptCode>
+    <ScriptCode Include="030 Create Postcodes Table.usql.cs">
+      <DependentUpon>030 Create Postcodes Table.usql</DependentUpon>
+    </ScriptCode>
+    <ScriptCode Include="040 Create Postcodes Demographic Table.usql.cs">
+      <DependentUpon>040 Create Postcodes Demographic Table.usql</DependentUpon>
+    </ScriptCode>
+    <ScriptCode Include="050 Create Districts Table.usql.cs">
+      <DependentUpon>050 Create Districts Table.usql</DependentUpon>
+    </ScriptCode>
+    <ScriptCode Include="060 Populate Tables.usql.cs">
+      <DependentUpon>060 Populate Tables.usql</DependentUpon>
+    </ScriptCode>
+    <ScriptCode Include="070 Postcode Area Count Report.usql.cs">
+      <DependentUpon>070 Postcode Area Count Report.usql</DependentUpon>
+    </ScriptCode>
+    <ScriptCode Include="080 Postcode Area Top10 Report.usql.cs">
+      <DependentUpon>080 Postcode Area Top10 Report.usql</DependentUpon>
+    </ScriptCode>
+    <ScriptCode Include="090 Postcode without Demography.usql.cs">
+      <DependentUpon>090 Postcode without Demography.usql</DependentUpon>
+    </ScriptCode>
+    <ScriptCode Include="DistrictTotalsReport.usql.cs">
+      <DependentUpon>DistrictTotalsReport.usql</DependentUpon>
+    </ScriptCode>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="sourcedata" />
+    <Folder Include="sourcedata\districts" />
+    <Folder Include="sourcedata\postcodedg" />
+    <Folder Include="sourcedata\postcodes" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="sourcedata\districts\Districts.csv">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="sourcedata\postcodedg\Postcode_Estimates_1_A_F.csv">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="sourcedata\postcodedg\Postcode_Estimates_1_G_L.csv">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="sourcedata\postcodedg\Postcode_Estimates_1_M_R.csv">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="sourcedata\postcodedg\Postcode_Estimates_1_S_Z.csv">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="sourcedata\postcodes\Postcodes.csv">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <!-- check for SDK Build target in current path then in USQLSDKPath-->
+  <Import Project="UsqlSDKBuild.targets" Condition="Exists('UsqlSDKBuild.targets')" />
+  <Import Project="$(USQLSDKPath)\UsqlSDKBuild.targets" Condition="!Exists('UsqlSDKBuild.targets') And '$(USQLSDKPath)' != '' And Exists('$(USQLSDKPath)\UsqlSDKBuild.targets')" />
+</Project>

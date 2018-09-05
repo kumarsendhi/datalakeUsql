@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vertexCommand command="Start" jobType="None" managedMemorySize="0" vertexArg="ScopeEngine.dll -scopeVertex SV1_Extract -vertexNumber 0">
+  <inputs>
+    <input name="" path="C:\Users\seyonadmin\AppData\Local\USQLDataRoot\postcodes\InitialDataFile.csv" blockAligned="True" globalStartOffset="0" localStartOffset="0" localEndOffset="13643810" length="13643810" />
+  </inputs>
+  <outputs>
+    <output path="C:\datalake\UKPostcodes\UKPostcodes\bin\Debug\Postcodeareatotals\_TMP\scopetmpfile._SV1_Extract_out0" isFirstOutputPiece="True" />
+  </outputs>
+</vertexCommand>

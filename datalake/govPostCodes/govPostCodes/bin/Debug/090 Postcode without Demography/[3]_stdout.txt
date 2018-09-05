@@ -1,0 +1,41 @@
+LocaVertexHost Runtime engine initialized
+Wed Sep  5 16:50:30 2018: enter native vertex execution
+Process private memory usage: 7716864
+Wed Sep  5 16:50:30 2018: ScopeEngine reset done in 0msec
+Wed Sep  5 16:50:30 2018: IO registration done in 33msec
+StreamCacheClientProxyManager: ConnectToStreamCacheServer WaitNamedPipe failed with error: 2.
+Wed Sep  5 16:50:30 2018: CLR check done in 0msec
+Wed Sep  5 16:50:30 2018: InitManaged skipped done in 0msec
+Wed Sep  5 16:50:30 2018: InitNative done in 0msec
+Input Stream Count = 2, Input Buffer Size = 4194304, Input Buffer Count = 2
+Output Stream Count = 1, Output Buffer Size = 4194304, Output Buffer Count = 6
+Wed Sep  5 16:50:30 2018: Vertex Execution done in 318msec
+Wed Sep  5 16:50:30 2018: ShutdownNative skipped done in 0msec
+Wed Sep  5 16:50:30 2018: ShutdownManaged skipped done in 0msec
+SV3_Combine: vertexGuid=FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF, vertexStart=Wed Sep  5 16:50:30 2018, avgExecutionMemoryPeakSize=0, avgGlobalMemoryPeakSize=0, avgHashMemoryPeakSize=0, avgIOMemoryPeakSize=41943040, avgOverallMemoryPeakSize=41943040, avgOverallReservedPeakSize=58720256, avgPrivateMemoryPeakSize=50561024, avgSortMemoryPeakSize=0, avgWorkingSetPeakSize=38469632, maxExecutionMemoryPeakSize=0, maxGlobalMemoryPeakSize=0, maxHashMemoryPeakSize=0, maxIOMemoryPeakSize=41943040, maxOverallMemoryPeakSize=41943040, maxOverallReservedPeakSize=58720256, maxPrivateMemoryPeakSize=50561024, maxSortMemoryPeakSize=0, maxWorkingSetPeakSize=38469632,
+	Output: IoStreamInclusiveTime=31, OperatorWaitOnIOTime=31, avgIoTime=0, bytes=5891843, closeTime=16, exclusiveTime=31, inclusiveTime=312, maxIoTime=0, maxIoTimeSize=0, maxRowCount=535621, minIoTime=0, minIoTimeSize=1697542, opId=13, openTime=15, operations=2, rowCount=535621, totalIoTime=0, totalThrottlingTime=0, totalWaitTime=0,
+		IOBuffers: avgBufferMemory=25165824, maxBufferCount=6, maxBufferMemory=25165824, maxBufferSize=4194304,
+		MergeJoin: OperatorWaitOnIOTime=0, badFlips=0, exclusiveTime=172, goodFlips=0, inclusiveTime=250, keyCount=535621, maxAvgJoinProduct=1, maxKeyCount=535621, maxRowCount=535621, opId=11, rowCount=535621,
+			KeyIterator: keyCount=1048575, maxKeyCount=1048575,
+				Allocator_KeyIterator: avgBinarySize=0, avgCommittedSize=0, avgReservedSize=4194304, avgStringSize=0, maxBinarySize=0, maxCommitCount=0, maxCommittedSize=0, maxReservedSize=4194304, maxResetCount=1288655, maxStringSize=0,
+				Extractor: IoStreamInclusiveTime=0, OperatorWaitOnIOTime=0, avgIoTime=0, bytes=10485742, closeTime=0, exclusiveTime=31, inclusiveTime=31, maxIoTime=0, maxIoTimeSize=0, maxRowCount=1048575, minIoTime=0, minIoTimeSize=1048567, opId=4, openTime=0, operations=4, rowCount=1048575, totalIoTime=0, totalThrottlingTime=0, totalWaitTime=0,
+					IOBuffers: avgBufferMemory=8388608, maxBufferCount=2, maxBufferMemory=8388608, maxBufferSize=4194304,
+					Allocator_Extractor: avgBinarySize=0, avgCommittedSize=0, avgReservedSize=4194304, avgRowDataSize=16, avgStringSize=0, maxBinarySize=0, maxCommitCount=0, maxCommittedSize=0, maxFixedRowDataSize=16, maxReservedSize=4194304, maxResetCount=1048577, maxRowDataSize=16, maxStringSize=0,
+			KeyIterator: keyCount=753035, maxKeyCount=753035,
+				Allocator_KeyIterator: avgBinarySize=0, avgCommittedSize=0, avgReservedSize=4194304, avgStringSize=0, maxBinarySize=0, maxCommitCount=0, maxCommittedSize=0, maxReservedSize=4194304, maxResetCount=1288656, maxStringSize=0,
+				Extractor: IoStreamInclusiveTime=16, OperatorWaitOnIOTime=0, avgIoTime=5, bytes=15973324, closeTime=0, exclusiveTime=47, inclusiveTime=47, maxIoTime=16, maxIoTimeSize=4194304, maxRowCount=753035, minIoTime=0, minIoTimeSize=4194304, opId=10, openTime=0, operations=3, rowCount=753035, totalIoTime=16, totalThrottlingTime=0, totalWaitTime=0,
+					IOBuffers: avgBufferMemory=8388608, maxBufferCount=2, maxBufferMemory=8388608, maxBufferSize=4194304,
+					Allocator_Extractor: avgBinarySize=0, avgCommittedSize=0, avgReservedSize=4194304, avgRowDataSize=16, avgStringSize=0, maxBinarySize=0, maxCommitCount=0, maxCommittedSize=0, maxFixedRowDataSize=16, maxReservedSize=4194304, maxResetCount=753036, maxRowDataSize=16, maxStringSize=0,
+Overall memory usage statistics
+	Allocations = 10
+	Deallocations = 10
+	Outstanding size = 0
+	Outstanding reservations = 0
+IO memory usage statistics
+	Allocations = 10
+	Deallocations = 10
+	Outstanding size = 0
+	Outstanding reservations = 0
+Wed Sep  5 16:50:30 2018: Stats dump done in 0msec
+Wed Sep  5 16:50:30 2018: finished executing successfully in 0.351sec
+LocaVertexHost Execution finished in    0.37 sec

@@ -1,0 +1,23 @@
+﻿USE DATABASE UkPostcodes;
+USE SCHEMA PostcodeData;
+
+@splitPostcodes =
+    SELECT p.Postcode,
+           (p.Postcode.IndexOf(" ") == - 1) ?p.Postcode :
+           p.Postcode.Substring(0, p.Postcode.IndexOf(" ")) AS PostcodeArea,
+           (p.Postcode.IndexOf(" ") == - 1) AS DoesNotHaveSpace
+    FROM Postcodes AS p;
+
+@results =
+    SELECT sp.PostcodeArea,
+           COUNT( * ) AS NoOfPostcodes
+    FROM @splitPostcodes AS sp
+         WHERE sp.DoesNotHaveSpace == false
+    GROUP BY sp.PostcodeArea;
+
+OUTPUT @results
+TO "/output/PostcodeAreaReport.csv"
+ORDER BY NoOfPostcodes DESC, PostcodeArea ASC
+         FETCH 10 ROWS
+USING Outputters.Csv(outputHeader : true, quoting : true);
+

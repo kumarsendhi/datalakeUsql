@@ -1,0 +1,10 @@
+<SStreams>
+  <SStream id="GetSStream_0">
+    <Partition id="0" LastRowId="524226" />
+    <Partition id="1" LastRowId="524349" />
+  </SStream>
+  <SStream id="GetSStream_2">
+    <Partition id="0" LastRowId="524226" />
+    <Partition id="1" LastRowId="524349" />
+  </SStream>
+</SStreams>

@@ -1,0 +1,4 @@
+﻿USE DATABASE UkPostcodes;
+CREATE SCHEMA IF NOT EXISTS PostcodeData;
+
+//DROP SCHEMA IF EXISTS PostcodeData;

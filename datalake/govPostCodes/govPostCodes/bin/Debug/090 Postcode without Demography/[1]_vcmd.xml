@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vertexCommand command="Start" jobType="None" managedMemorySize="0" vertexArg="ScopeEngine.dll -scopeVertex SV1_Extract -vertexNumber 0">
+  <inputs>
+    <input name="GetSStream_0[0,0,0]" path="C:\Users\seyonadmin\AppData\Local\USQLDataRoot\_catalog_\database\8a33ae21-042d-4bf8-a23e-11a8f6641f79\schema\0a543926-2519-4ed8-9584-1c714f05eece\table\ae85c4d7-e2ef-4f88-80ee-a86785a817de\6b5b6e38-2105-4481-b948-0247dc619518.ss" blockAligned="True" globalStartOffset="0" localStartOffset="0" localEndOffset="13627573" length="13627573" />
+    <input name="GetSStream_0[1,0,0]" path="C:\Users\seyonadmin\AppData\Local\USQLDataRoot\_catalog_\database\8a33ae21-042d-4bf8-a23e-11a8f6641f79\schema\0a543926-2519-4ed8-9584-1c714f05eece\table\ae85c4d7-e2ef-4f88-80ee-a86785a817de\6b5b6e38-2105-4481-b948-0247dc619518.ss" blockAligned="True" globalStartOffset="0" localStartOffset="13627573" localEndOffset="27258542" length="27258542" />
+  </inputs>
+  <outputs>
+    <output path="C:\datalake\govPostCodes\govPostCodes\bin\Debug\090 Postcode without Demography\_TMP\scopetmpfile._SV1_Extract_out0" isFirstOutputPiece="False" />
+  </outputs>
+</vertexCommand>

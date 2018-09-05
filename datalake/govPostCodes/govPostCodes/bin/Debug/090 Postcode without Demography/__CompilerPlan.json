@@ -1,0 +1,76 @@
+﻿{
+"CompilerPlanStart":"9\/5\/2018 4:46:58 PM"
+,
+"Settings":"-c++ -mp -pdb Partial -OUTPUT_PATH C:\\Users\\seyonadmin\\AppData\\Local\\USQLDataRoot -cosmosCluster localhost -apEnvironment Default -apCluster localhost -Off EnableScopeVertexResourceMode -On ForceShadowCopy -On ADL -Off Sirius -On USQL -Off SQLIPSQLProxy -Off SQLIPSQLProxyNative -Off PolarisScaleUp -buckets 1 -SplitPartitionThreshold 52428800 -ClientVersion 10.2.2.0"
+,
+"planNodes":
+[
+{
+"statementText":"\/\/ Auto-generated header code\/\/ Auto-generated header code ended\/\/ User scriptUSE DATABA"
+,
+"NodeName":"UseDatabaseStatement"
+,
+"Name":"UkPostcodes"
+}
+,
+{
+"statementText":"USE SCHEMA PostcodeData"
+,
+"NodeName":"UseSchemaStatement"
+,
+"Name":"PostcodeData"
+}
+,
+{
+"statementText":" SELECT p.Postcode    FROM Postcodes AS p         LEFT JOIN             PostcodeDemographics A"
+,
+"NodeName":"QueryStatement"
+}
+,
+{
+"statementText":"OUTPUT @recordsTO \"\/output\/postcodeswithoutdemographics.tsv\"ORDER BY Postcode ASCUSING Out"
+,
+"NodeName":"OutputStatement"
+}
+]
+,
+"CompilerPlanEnd":"9\/5\/2018 4:46:58 PM"
+}
+{
+"CompilerPlanStart":"9\/5\/2018 4:50:06 PM"
+,
+"Settings":"-c++ -mp -pdb Partial -OUTPUT_PATH C:\\Users\\seyonadmin\\AppData\\Local\\USQLDataRoot -cosmosCluster localhost -apEnvironment Default -apCluster localhost -Off EnableScopeVertexResourceMode -On ForceShadowCopy -On ADL -Off Sirius -On USQL -Off SQLIPSQLProxy -Off SQLIPSQLProxyNative -Off PolarisScaleUp -buckets 1 -SplitPartitionThreshold 52428800 -ClientVersion 10.2.2.0"
+,
+"planNodes":
+[
+{
+"statementText":"\/\/ Auto-generated header code\/\/ Auto-generated header code ended\/\/ User scriptUSE DATABA"
+,
+"NodeName":"UseDatabaseStatement"
+,
+"Name":"UkPostcodes"
+}
+,
+{
+"statementText":"USE SCHEMA PostcodeData"
+,
+"NodeName":"UseSchemaStatement"
+,
+"Name":"PostcodeData"
+}
+,
+{
+"statementText":"    SELECT p.Postcode    FROM Postcodes AS p         LEFT ANTISEMIJOIN             PostcodeD"
+,
+"NodeName":"QueryStatement"
+}
+,
+{
+"statementText":"OUTPUT @recordsTO \"\/output\/postcodeswithoutdemographics.tsv\"ORDER BY Postcode ASCUSING Out"
+,
+"NodeName":"OutputStatement"
+}
+]
+,
+"CompilerPlanEnd":"9\/5\/2018 4:50:06 PM"
+}

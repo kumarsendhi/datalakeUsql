@@ -1,0 +1,30 @@
+// Auto-generated header code
+
+// Auto-generated header code ended
+
+// User script
+
+USE DATABASE UkPostcodes;
+
+USE SCHEMA PostcodeData;
+
+DROP TABLE IF EXISTS Postcodes;
+
+CREATE TABLE IF NOT EXISTS Postcodes
+(
+    Postcode string,
+    DistrictCode string,
+    Latitude float,
+    Longitude float,
+    INDEX idx_Postcodes
+    CLUSTERED (Postcode ASC)
+    DISTRIBUTED BY HASH(Postcode)
+);
+
+// User script ended
+
+// Auto-generated footer code
+
+
+// Auto-generated footer code ended
+
